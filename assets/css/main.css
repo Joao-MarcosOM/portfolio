@@ -298,13 +298,13 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 
 #about .img-thumb img {
-  margin-left: 50px;
+  margin-left: 15px;
   border: 8px solid #fff;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
 .profile-wrapper {
-  padding: 45px 0;
+  padding: 25px 0;
 }
 
 .profile-wrapper .btn {
