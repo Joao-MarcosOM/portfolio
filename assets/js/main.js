@@ -70,6 +70,8 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/joaomarcosom/';
     document.title = t('meta.title', pt.title, en);
     if (descEl) descEl.content = t('meta.description', pt.description, en);
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    // O movimento (motion.js) re-quebra os títulos em palavras depois da troca.
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
   }
 
   const params = new URLSearchParams(location.search);

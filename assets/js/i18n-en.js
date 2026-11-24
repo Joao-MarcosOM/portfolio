@@ -31,7 +31,7 @@ window.I18N_EN = {
   'about.alt': 'Photo of João Marcos smiling, outdoors',
   'about.kicker': 'About',
   'about.title': 'From the bot to measured results',
-  'about.p1': 'I’ve spent more than 4 years building chatbots, AI agents and integrations. I started at SolviTech, now White Wall, as an intern, and in less than a year I was leading the development team. Later, as Tech Lead for AI and Chatbots, I worked with large accounts on the Blip platform across automotive, agribusiness, real estate and fitness.',
+  'about.p1': 'I’ve spent more than 6 years building chatbots, AI agents and integrations. I started at SolviTech, now White Wall, as an intern, and in less than a year I was leading the development team. Later, as Tech Lead for AI and Chatbots, I worked with large accounts on the Blip platform across automotive, agribusiness, real estate and fitness.',
   'about.p2': 'In 2026 I co-founded Conexxio, where I’m the CTO. Many of the projects below started there.',
   'about.p3': 'I started working early, in my family’s food manufacturing business, and worked my way up to head of finance. That’s why I also see technology from the side of whoever pays the bill. I hold a postgraduate degree in AI and Automation from Rocketseat and a bachelor’s in Computer Science from CEUB.',
 
@@ -72,7 +72,7 @@ window.I18N_EN = {
 
   'motor.title': 'Multi-agent engine for WhatsApp',
   'motor.challenge': 'Every new client required a bot built from scratch.',
-  'motor.built': 'A single engine that connects the OpenAI Responses API to Blip and ManyChat. Each agent is one spreadsheet row with its instructions, tone, rules and channel. Changing how a bot behaves doesn’t require a deploy.',
+  'motor.built': 'A single engine that connects the OpenAI Responses API to any application, since it is consumed over HTTP. It already runs on Blip and ManyChat. Each agent is one spreadsheet row with its instructions, tone, rules and channel. Changing how a bot behaves doesn’t require a deploy.',
   'motor.result': 'Launching a new client became configuration, not development.',
   'motor.alt': 'Spreadsheet with an agent’s configuration: model, temperature, token limit, tools and instructions',
   'motor.cap': 'A full demo agent in one row: model, temperature, tools and instructions. Spreadsheet ID blurred.',
@@ -152,8 +152,9 @@ window.I18N_EN = {
 
   'contact.kicker': 'Contact',
   'contact.title': 'Let’s talk',
-  'contact.intro': 'The fastest way to reach me is by email or LinkedIn.',
+  'contact.intro': 'Reach me through whichever channel you prefer.',
   'contact.email': 'Email',
+  'contact.phone': 'Phone',
   'contact.cv': 'Résumé',
 
   'footer.note': 'Static site, no trackers.',

@@ -29,6 +29,8 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__motionOk)document.documentElement.classList.remove('js')},3000)</script>
 </head>
 <body>
   <a class="skip" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
@@ -50,36 +52,41 @@
         <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button>
       </div>
     </div>
+    <div class="progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="conteudo">
     <!-- HERO -->
     <section class="hero" id="inicio">
+      <canvas class="vivo" aria-hidden="true"></canvas>
       <div class="wrap hero__grid">
         <div class="hero__text">
-          <p class="eyebrow" data-i18n="hero.eyebrow">IA conversacional · Blip · WhatsApp</p>
-          <h1 class="hero__name">João Marcos</h1>
-          <p class="hero__role" data-i18n-html="hero.role">Especialista em IA Conversacional <span class="sep" aria-hidden="true">|</span> Blip Expert <span class="sep" aria-hidden="true">|</span> Automação de atendimento no WhatsApp com LLMs</p>
-          <p class="hero__lead" data-i18n="hero.lead">Ajudo empresas a transformar atendimento no WhatsApp em operação automatizada, medida e escalável.</p>
-          <div class="actions">
+          <p class="eyebrow" data-reveal data-i18n="hero.eyebrow">IA conversacional · Blip · WhatsApp</p>
+          <h1 class="hero__name" data-palavras style="--d:120ms">João Marcos</h1>
+          <p class="hero__role" data-reveal style="--d:380ms" data-i18n-html="hero.role">Especialista em IA Conversacional <span class="sep" aria-hidden="true">|</span> Blip Expert <span class="sep" aria-hidden="true">|</span> Automação de atendimento no WhatsApp com LLMs</p>
+          <p class="hero__lead" data-reveal style="--d:520ms" data-i18n="hero.lead">Ajudo empresas a transformar atendimento no WhatsApp em operação automatizada, medida e escalável.</p>
+          <div class="actions" data-reveal style="--d:660ms">
             <a class="btn btn--primary" href="#projetos" data-i18n="cta.projects">Ver projetos</a>
             <a class="btn" href="assets/docs/curriculo-joao-marcos.pdf" download data-i18n="cta.resume" data-i18n-attr="href:cv.href">Baixar currículo</a>
             <a class="btn btn--ghost" href="https://www.linkedin.com/in/joaomarcosom/" data-link="linkedin" target="_blank" rel="noopener">LinkedIn <span class="sr-only" data-i18n="a11y.newtab">(abre em nova aba)</span></a>
           </div>
         </div>
 
-        <figure class="pipeline" aria-labelledby="pipeline-cap">
+        <figure class="pipeline" aria-labelledby="pipeline-cap" data-pipeline data-tilt data-reveal style="--d:260ms">
           <figcaption id="pipeline-cap" class="pipeline__cap" data-i18n="pipe.caption">Como meu diagnóstico lê um atendimento (exemplo)</figcaption>
           <div class="pipe pipe--msg">
             <span class="pipe__label" data-i18n="pipe.l1">mensagem do cliente</span>
-            <p class="bubble" data-i18n="pipe.msg">Meu pedido ainda não chegou, consegue ver pra mim?</p>
+            <div class="msgslot">
+              <span class="typing" aria-hidden="true"><span></span><span></span><span></span></span>
+              <p class="bubble" data-i18n="pipe.msg">Meu pedido ainda não chegou, consegue ver pra mim?</p>
+            </div>
           </div>
           <div class="pipe pipe--json">
             <span class="pipe__label" data-i18n="pipe.l2">classificação · Gemini · JSON</span>
-            <pre><code>{
-  "categoria": "status_pedido",
-  "evitavel": true,
-  "motivo": "falta_de_cobertura"
+            <pre><code data-stream>{
+  <span class="tk">"categoria"</span>: <span class="ts">"status_pedido"</span>,
+  <span class="tk">"evitavel"</span>: <span class="tb">true</span>,
+  <span class="tk">"motivo"</span>: <span class="ts">"falta_de_cobertura"</span>
 }</code></pre>
           </div>
           <div class="pipe pipe--metric">
@@ -90,18 +97,25 @@
       </div>
     </section>
 
+    <div class="fita" aria-hidden="true">
+      <div class="fita__track">
+        <ul class="fita__list"><li>Blip Builder</li><li>Blip Desk</li><li>WhatsApp Business API</li><li>OpenAI</li><li>Gemini</li><li>Claude</li><li>n8n</li><li>Google Apps Script</li><li>ManyChat</li><li>Wati</li><li>Meta Conversions API</li><li>ClickUp API</li><li>Node.js</li><li>React</li><li>TypeScript</li><li>SQL</li></ul>
+        <ul class="fita__list"><li>Blip Builder</li><li>Blip Desk</li><li>WhatsApp Business API</li><li>OpenAI</li><li>Gemini</li><li>Claude</li><li>n8n</li><li>Google Apps Script</li><li>ManyChat</li><li>Wati</li><li>Meta Conversions API</li><li>ClickUp API</li><li>Node.js</li><li>React</li><li>TypeScript</li><li>SQL</li></ul>
+      </div>
+    </div>
+
     <!-- SOBRE -->
     <section class="section" id="sobre" aria-labelledby="sobre-t">
       <div class="wrap about">
-        <div class="about__photo">
+        <div class="about__photo" data-revela>
           <img src="assets/img/joao.webp" width="720" height="720" alt="Foto de João Marcos sorrindo, ao ar livre" data-i18n-attr="alt:about.alt" loading="lazy" decoding="async">
         </div>
         <div class="about__text">
-          <p class="eyebrow" data-i18n="about.kicker">Sobre</p>
-          <h2 id="sobre-t" data-i18n="about.title">Do bot ao resultado medido</h2>
-          <p data-i18n="about.p1">Trabalho há mais de 4 anos com chatbots, agentes de IA e integrações. Comecei na SolviTech, hoje White Wall, como estagiário, e em menos de um ano liderava o time de desenvolvimento. Depois, como Tech Lead de IA e Chatbots, atendi grandes contas na plataforma Blip, dos setores automotivo, agronegócio, imobiliário e fitness.</p>
-          <p data-i18n="about.p2">Em 2026 cofundei a Conexxio, onde sou CTO. Boa parte dos projetos abaixo nasceu lá.</p>
-          <p data-i18n="about.p3">Comecei cedo, na indústria de alimentos da família, e cheguei a responsável financeiro. Por isso entendo tecnologia também do lado de quem paga a conta. Sou pós-graduado em IA e Automação pela Rocketseat e formado em Ciência da Computação pelo CEUB.</p>
+          <p class="eyebrow" data-reveal data-i18n="about.kicker">Sobre</p>
+          <h2 id="sobre-t" data-palavras data-i18n="about.title">Do bot ao resultado medido</h2>
+          <p class="about__lead" data-acende data-i18n="about.p1">Trabalho há mais de 6 anos com chatbots, agentes de IA e integrações. Comecei na SolviTech, hoje White Wall, como estagiário, e em menos de um ano liderava o time de desenvolvimento. Depois, como Tech Lead de IA e Chatbots, atendi grandes contas na plataforma Blip, dos setores automotivo, agronegócio, imobiliário e fitness.</p>
+          <p data-reveal data-i18n="about.p2">Em 2026 cofundei a Conexxio, onde sou CTO. Boa parte dos projetos abaixo nasceu lá.</p>
+          <p data-reveal style="--d:120ms" data-i18n="about.p3">Comecei cedo, na indústria de alimentos da família, e cheguei a responsável financeiro. Por isso entendo tecnologia também do lado de quem paga a conta. Sou pós-graduado em IA e Automação pela Rocketseat e formado em Ciência da Computação pelo CEUB.</p>
         </div>
       </div>
     </section>
@@ -110,14 +124,15 @@
     <section class="section section--projects" id="projetos" aria-labelledby="projetos-t">
       <div class="wrap">
         <div class="section__head">
-          <p class="eyebrow" data-i18n="proj.kicker">Projetos</p>
-          <h2 id="projetos-t" data-i18n="proj.title">Casos reais, com arquitetura e resultado</h2>
-          <p class="section__intro" data-i18n="proj.intro">Cada caso mostra o problema, o que eu construí e o que mudou. Os clientes aparecem sem nome, e os prints têm dados sensíveis borrados.</p>
+          <p class="eyebrow" data-reveal data-i18n="proj.kicker">Projetos</p>
+          <h2 id="projetos-t" data-palavras data-i18n="proj.title">Casos reais, com arquitetura e resultado</h2>
+          <p class="section__intro" data-reveal style="--d:200ms" data-i18n="proj.intro">Cada caso mostra o problema, o que eu construí e o que mudou. Os clientes aparecem sem nome, e os prints têm dados sensíveis borrados.</p>
         </div>
 
         <!-- a) Destaque -->
-        <article class="feature" aria-labelledby="p-diag">
+        <article class="feature" aria-labelledby="p-diag" data-reveal data-glow>
           <div class="feature__head">
+            <span class="case-row__num" aria-hidden="true">01</span>
             <span class="tag tag--accent" data-i18n="proj.featured">Destaque</span>
             <h3 id="p-diag" data-i18n="diag.title">Diagnóstico de Atendimento com IA</h3>
           </div>
@@ -136,16 +151,16 @@
               <p class="result__label" data-i18n="label.result">Resultado</p>
               <p class="result__context" data-i18n="diag.context">Validado em um e-commerce com cerca de 2.900 tickets em 30 dias.</p>
               <ul class="metrics">
-                <li><strong>86%</strong><span data-i18n="diag.m1">de transbordo evitável</span></li>
-                <li><strong>12%</strong><span data-i18n="diag.m2">de clientes nunca atendidos</span></li>
-                <li><strong>28%</strong><span data-i18n="diag.m3">de demandas sem resposta</span></li>
-                <li><strong>25%</strong><span data-i18n="diag.m4">de recontato em 7 dias</span></li>
+                <li><strong data-count="86">86%</strong><span data-i18n="diag.m1">de transbordo evitável</span></li>
+                <li><strong data-count="12">12%</strong><span data-i18n="diag.m2">de clientes nunca atendidos</span></li>
+                <li><strong data-count="28">28%</strong><span data-i18n="diag.m3">de demandas sem resposta</span></li>
+                <li><strong data-count="25">25%</strong><span data-i18n="diag.m4">de recontato em 7 dias</span></li>
               </ul>
               <p class="result__note" data-i18n-html="diag.speed">O paralelismo reduziu a classificação de <strong>cerca de 3 horas para 15 minutos</strong>.</p>
             </div>
           </div>
 
-          <div class="flow-wrap">
+          <div class="flow-wrap" data-reveal>
             <p class="flow__title" data-i18n="diag.flowTitle">Arquitetura</p>
             <ol class="flow">
               <li><span class="flow__name">Blip Desk API</span><span class="flow__desc" data-i18n="flow.1">tickets do período</span></li>
@@ -157,7 +172,7 @@
             <p class="flow__note" data-i18n="diag.rule">A regra que mais importou: o LLM classifica, o código conta. Assim cada número do relatório pode ser conferido.</p>
           </div>
 
-          <div class="doc">
+          <div class="doc" data-reveal>
             <div class="doc__pages">
               <a class="shot shot--page" href="assets/img/projetos/diagnostico-p1.webp">
                 <img src="assets/img/projetos/diagnostico-p1.webp" width="910" height="1287" alt="Capa do relatório de exemplo: Diagnóstico de Atendimento" data-i18n-attr="alt:diag.alt1" loading="lazy" decoding="async">
@@ -182,13 +197,14 @@
 
         <!-- b) Motor multiagente -->
         <article class="case-row" aria-labelledby="p-motor">
-          <div class="case-row__text">
+          <div class="case-row__text" data-reveal>
+            <span class="case-row__num" aria-hidden="true">02</span>
             <h3 id="p-motor" data-i18n="motor.title">Motor multiagente para WhatsApp</h3>
             <dl class="case">
               <dt data-i18n="label.challenge">Desafio</dt>
               <dd data-i18n="motor.challenge">Cada cliente novo exigia um bot construído do zero.</dd>
               <dt data-i18n="label.built">O que construí</dt>
-              <dd data-i18n="motor.built">Um motor único que conecta a OpenAI Responses API ao Blip e ao ManyChat. Cada agente é uma linha de planilha, com instruções, tom, regras e canal. Mudar o comportamento de um bot não exige deploy.</dd>
+              <dd data-i18n="motor.built">Um motor único que conecta a OpenAI Responses API a qualquer aplicação, porque é consumido por requisição HTTP. Já roda no Blip e no ManyChat. Cada agente é uma linha de planilha, com instruções, tom, regras e canal. Mudar o comportamento de um bot não exige deploy.</dd>
               <dt data-i18n="label.result">Resultado</dt>
               <dd data-i18n="motor.result">Colocar um cliente novo no ar virou configuração, não desenvolvimento.</dd>
             </dl>
@@ -196,8 +212,8 @@
               <li>Google Apps Script</li><li>OpenAI Responses API</li><li>Blip</li><li>ManyChat</li><li>Google Sheets</li>
             </ul>
           </div>
-          <figure class="gallery">
-            <a class="shot shot--main" href="assets/img/projetos/motor-agentes.webp">
+          <figure class="gallery" data-reveal style="--d:140ms">
+            <a class="shot shot--main" data-revela data-tilt href="assets/img/projetos/motor-agentes.webp">
               <img src="assets/img/projetos/motor-agentes.webp" width="1600" height="726" alt="Planilha com a configuração de um agente: modelo, temperatura, limite de tokens, ferramentas e instruções" data-i18n-attr="alt:motor.alt" loading="lazy" decoding="async">
             </a>
             <figcaption data-i18n="motor.cap">Um agente de demonstração inteiro numa linha: modelo, temperatura, ferramentas e instruções. ID da planilha borrado.</figcaption>
@@ -206,7 +222,8 @@
 
         <!-- c) Funil comercial -->
         <article class="case-row case-row--flip" aria-labelledby="p-funil">
-          <div class="case-row__text">
+          <div class="case-row__text" data-reveal>
+            <span class="case-row__num" aria-hidden="true">03</span>
             <h3 id="p-funil" data-i18n="funil.title">Funil comercial automatizado</h3>
             <dl class="case">
               <dt data-i18n="label.challenge">Desafio</dt>
@@ -220,8 +237,8 @@
               <li>PHP</li><li>Google Calendar API</li><li>ClickUp API</li><li>Meta Pixel</li><li>Conversions API</li><li>n8n</li>
             </ul>
           </div>
-          <figure class="gallery">
-            <a class="shot shot--main" href="assets/img/projetos/funil-chat.webp">
+          <figure class="gallery" data-reveal style="--d:140ms">
+            <a class="shot shot--main" data-revela data-tilt href="assets/img/projetos/funil-chat.webp">
               <img src="assets/img/projetos/funil-chat.webp" width="1299" height="1017" alt="Chat de qualificação no site, com a primeira pergunta e as opções de resposta" data-i18n-attr="alt:funil.alt1" loading="lazy" decoding="async">
             </a>
             <div class="gallery__thumbs">
@@ -238,7 +255,8 @@
 
         <!-- d) Prospecção -->
         <article class="case-row" aria-labelledby="p-prosp">
-          <div class="case-row__text">
+          <div class="case-row__text" data-reveal>
+            <span class="case-row__num" aria-hidden="true">04</span>
             <h3 id="p-prosp" data-i18n="prosp.title">Máquina de prospecção com IA</h3>
             <dl class="case">
               <dt data-i18n="label.challenge">Desafio</dt>
@@ -252,8 +270,8 @@
               <li>n8n</li><li>Google Places API</li><li>Gemini</li><li>Google Sheets</li>
             </ul>
           </div>
-          <figure class="gallery">
-            <a class="shot shot--main" href="assets/img/projetos/prospeccao-planilha.webp">
+          <figure class="gallery" data-reveal style="--d:140ms">
+            <a class="shot shot--main" data-revela data-tilt href="assets/img/projetos/prospeccao-planilha.webp">
               <img src="assets/img/projetos/prospeccao-planilha.webp" width="1600" height="854" alt="Planilha de prospecção com a mensagem gerada, o status e a dor identificada nas avaliações" data-i18n-attr="alt:prosp.alt1" loading="lazy" decoding="async">
             </a>
             <div class="gallery__thumbs">
@@ -270,7 +288,8 @@
 
         <!-- e) Joia Mineira -->
         <article class="case-row case-row--flip" aria-labelledby="p-joia">
-          <div class="case-row__text">
+          <div class="case-row__text" data-reveal>
+            <span class="case-row__num" aria-hidden="true">05</span>
             <h3 id="p-joia" data-i18n="joia.title">IA para gestores consultando o ERP (Joia Mineira)</h3>
             <dl class="case">
               <dt data-i18n="label.challenge">Desafio</dt>
@@ -284,8 +303,8 @@
               <li>Blip</li><li>Google Apps Script</li><li>APIs REST</li><li>SQL</li>
             </ul>
           </div>
-          <figure class="gallery">
-            <a class="shot shot--main" href="assets/img/projetos/joia-builder.webp">
+          <figure class="gallery" data-reveal style="--d:140ms">
+            <a class="shot shot--main" data-revela data-tilt href="assets/img/projetos/joia-builder.webp">
               <img src="assets/img/projetos/joia-builder.webp" width="1522" height="922" alt="Fluxo de autoatendimento no Builder da Blip" data-i18n-attr="alt:joia.alt1" loading="lazy" decoding="async">
             </a>
             <div class="gallery__thumbs">
@@ -302,7 +321,8 @@
 
         <!-- f) Vc está bem? -->
         <article class="case-row" aria-labelledby="p-app">
-          <div class="case-row__text">
+          <div class="case-row__text" data-reveal>
+            <span class="case-row__num" aria-hidden="true">06</span>
             <h3 id="p-app" data-i18n="app.title">App Vc está bem?</h3>
             <dl class="case">
               <dt data-i18n="label.challenge">Desafio</dt>
@@ -317,8 +337,8 @@
               <li>React Native (Expo)</li><li>App Store Connect</li><li>Google Play</li><li>ClickUp</li><li>SMTP2GO</li><li>Webhooks</li><li>Facebook SDK</li>
             </ul>
           </div>
-          <figure class="gallery">
-            <a class="shot shot--main" href="assets/img/projetos/vcestabem-app.webp">
+          <figure class="gallery" data-reveal style="--d:140ms">
+            <a class="shot shot--main" data-revela data-tilt href="assets/img/projetos/vcestabem-app.webp">
               <img src="assets/img/projetos/vcestabem-app.webp" width="1600" height="1093" alt="Telas do app: check-in com os botões Estou bem e Não estou bem, contatos de confiança e horários" data-i18n-attr="alt:app.alt1" loading="lazy" decoding="async">
             </a>
             <div class="gallery__thumbs">
@@ -337,7 +357,7 @@
         <div class="tools">
           <h3 class="tools__title" data-i18n="tools.title">Ferramentas</h3>
           <div class="tools__grid">
-            <article class="tool" aria-labelledby="p-json">
+            <article class="tool" data-reveal data-glow style="--d:140ms" data-reveal data-glow aria-labelledby="p-json">
               <a class="shot shot--tool" href="assets/img/projetos/blip-json.webp">
                 <img src="assets/img/projetos/blip-json.webp" width="1292" height="942" alt="Tela do conversor: upload da imagem de um fluxo e o JSON gerado" data-i18n-attr="alt:json.alt" loading="lazy" decoding="async">
               </a>
@@ -364,34 +384,34 @@
     <section class="section" id="experiencia" aria-labelledby="exp-t">
       <div class="wrap two-col">
         <div class="two-col__head">
-          <p class="eyebrow" data-i18n="exp.kicker">Experiência</p>
-          <h2 id="exp-t" data-i18n="exp.title">Trajetória</h2>
+          <p class="eyebrow" data-reveal data-i18n="exp.kicker">Experiência</p>
+          <h2 id="exp-t" data-palavras data-i18n="exp.title">Trajetória</h2>
         </div>
         <div>
-          <ol class="timeline">
-            <li>
+          <ol class="timeline" data-timeline>
+            <li data-reveal>
               <p class="timeline__when" data-i18n="exp.1.when">jan/2026 até hoje</p>
               <h3 class="timeline__role"><span data-i18n="exp.1.role">Co-founder &amp; CTO</span> <span class="timeline__org">· Conexxio</span></h3>
               <p class="timeline__desc" data-i18n="exp.1.desc">Consultoria de IA e automação de WhatsApp. Criei o Diagnóstico de Atendimento com IA e o motor multiagente.</p>
             </li>
-            <li>
+            <li data-reveal>
               <p class="timeline__when" data-i18n="exp.2.when">dez/2023 a dez/2025</p>
               <h3 class="timeline__role"><span data-i18n="exp.2.role">Tech Lead, IA e Chatbots</span> <span class="timeline__org" data-i18n="exp.2.org">· SolviTech, hoje White Wall</span></h3>
               <p class="timeline__desc" data-i18n="exp.2.desc">Grandes contas na plataforma Blip, dos setores automotivo, agronegócio, imobiliário e fitness.</p>
             </li>
-            <li>
+            <li data-reveal>
               <p class="timeline__when" data-i18n="exp.3.when">mai/2022 a dez/2023</p>
               <h3 class="timeline__role"><span data-i18n="exp.3.role">Estagiário a Líder de Desenvolvimento</span> <span class="timeline__org">· SolviTech</span></h3>
               <p class="timeline__desc" data-i18n="exp.3.desc">Em menos de um ano, de estagiário a líder do time de desenvolvimento.</p>
             </li>
-            <li>
+            <li data-reveal>
               <p class="timeline__when" data-i18n="exp.4.when">fev/2016 a ago/2022</p>
               <h3 class="timeline__role"><span data-i18n="exp.4.role">Auxiliar de Produção a Responsável Financeiro</span> <span class="timeline__org">· Joia Mineira</span></h3>
               <p class="timeline__desc" data-i18n="exp.4.desc">Indústria de alimentos da família.</p>
             </li>
           </ol>
-          <h3 class="subhead" data-i18n="edu.title">Formação</h3>
-          <ul class="edu">
+          <h3 class="subhead" data-reveal data-i18n="edu.title">Formação</h3>
+          <ul class="edu" data-reveal style="--d:120ms">
             <li><span data-i18n="edu.1">Pós-graduação em IA e Automação</span> <span class="edu__org">· Rocketseat</span></li>
             <li><span data-i18n="edu.2">Bacharelado em Ciência da Computação</span> <span class="edu__org">· CEUB</span></li>
           </ul>
@@ -403,23 +423,23 @@
     <section class="section" id="stack" aria-labelledby="stack-t">
       <div class="wrap two-col">
         <div class="two-col__head">
-          <p class="eyebrow">Stack</p>
-          <h2 id="stack-t" data-i18n="stack.title">Com o que eu trabalho</h2>
+          <p class="eyebrow" data-reveal>Stack</p>
+          <h2 id="stack-t" data-palavras data-i18n="stack.title">Com o que eu trabalho</h2>
         </div>
         <div class="stack">
-          <div class="stack__group">
+          <div class="stack__group" data-reveal style="--d:0ms">
             <h3 data-i18n="stack.g1">IA e LLMs</h3>
             <ul class="tags"><li>OpenAI</li><li>Gemini</li><li>Claude</li><li data-i18n="stack.prompt">Engenharia de prompt</li><li data-i18n="stack.multi">Sistemas multiagente</li></ul>
           </div>
-          <div class="stack__group">
+          <div class="stack__group" data-reveal style="--d:100ms">
             <h3 data-i18n="stack.g2">Plataformas conversacionais</h3>
             <ul class="tags"><li>Blip (Builder, Desk, Custom Desk)</li><li>WhatsApp Business API</li><li>Wati</li><li>ManyChat</li></ul>
           </div>
-          <div class="stack__group">
+          <div class="stack__group" data-reveal style="--d:200ms">
             <h3 data-i18n="stack.g3">Automação e integrações</h3>
             <ul class="tags"><li>n8n</li><li>Google Apps Script</li><li>APIs REST</li><li>Webhooks</li></ul>
           </div>
-          <div class="stack__group">
+          <div class="stack__group" data-reveal style="--d:300ms">
             <h3 data-i18n="stack.g4">Desenvolvimento</h3>
             <ul class="tags"><li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>React</li><li>PHP</li><li>Python</li><li>SQL</li></ul>
           </div>
@@ -428,22 +448,24 @@
     </section>
 
     <!-- CONTATO -->
-    <section class="section section--contact" id="contato" aria-labelledby="contato-t">
+    <section class="section section--contact tone-dark" id="contato" aria-labelledby="contato-t" data-vivo>
+      <canvas class="vivo" aria-hidden="true"></canvas>
       <div class="wrap">
-        <p class="eyebrow" data-i18n="contact.kicker">Contato</p>
-        <h2 id="contato-t" data-i18n="contact.title">Vamos conversar</h2>
-        <p class="section__intro" data-i18n="contact.intro">O jeito mais rápido de falar comigo é por e-mail ou pelo LinkedIn.</p>
+        <p class="eyebrow" data-reveal data-i18n="contact.kicker">Contato</p>
+        <h2 id="contato-t" data-palavras data-i18n="contact.title">Vamos conversar</h2>
+        <p class="section__intro" data-reveal style="--d:200ms" data-i18n="contact.intro">Fale comigo pelo canal que preferir.</p>
         <ul class="contact">
-          <li><span class="contact__label" data-i18n="contact.email">E-mail</span><a href="mailto:joaomarcos.bigsan@gmail.com">joaomarcos.bigsan@gmail.com</a></li>
-          <li><span class="contact__label">LinkedIn</span><a href="https://www.linkedin.com/in/joaomarcosom/" data-link="linkedin" data-link-text target="_blank" rel="noopener">linkedin.com/in/joaomarcosom</a></li>
-          <li><span class="contact__label">GitHub</span><a href="https://github.com/Joao-MarcosOM" target="_blank" rel="noopener">github.com/Joao-MarcosOM</a></li>
-          <li><span class="contact__label" data-i18n="contact.cv">Currículo</span><a href="assets/docs/curriculo-joao-marcos.pdf" download data-i18n="cta.resume" data-i18n-attr="href:cv.href">Baixar currículo</a></li>
+          <li data-reveal style="--d:0ms"><span class="contact__label" data-i18n="contact.email">E-mail</span><a href="mailto:joaomarcos.bigsan@gmail.com">joaomarcos.bigsan@gmail.com</a></li>
+          <li data-reveal style="--d:60ms"><span class="contact__label" data-i18n="contact.phone">Celular</span><a href="tel:+5561981600111">+55 (61) 98160-0111</a></li>
+          <li data-reveal style="--d:120ms"><span class="contact__label">LinkedIn</span><a href="https://www.linkedin.com/in/joaomarcosom/" data-link="linkedin" data-link-text target="_blank" rel="noopener">linkedin.com/in/joaomarcosom</a></li>
+          <li data-reveal style="--d:180ms"><span class="contact__label">GitHub</span><a href="https://github.com/Joao-MarcosOM" target="_blank" rel="noopener">github.com/Joao-MarcosOM</a></li>
+          <li data-reveal style="--d:240ms"><span class="contact__label" data-i18n="contact.cv">Currículo</span><a href="assets/docs/curriculo-joao-marcos.pdf" download data-i18n="cta.resume" data-i18n-attr="href:cv.href">Baixar currículo</a></li>
         </ul>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer tone-dark">
     <div class="wrap footer__inner">
       <p>© 2026 João Marcos</p>
       <p data-i18n="footer.note">Site estático, sem rastreadores.</p>
@@ -460,5 +482,7 @@
 
   <script src="assets/js/i18n-en.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/vivo.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
 </body>
 </html>
