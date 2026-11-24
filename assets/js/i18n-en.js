@@ -154,7 +154,7 @@ window.I18N_EN = {
   'contact.title': 'Let’s talk',
   'contact.intro': 'Reach me through whichever channel you prefer.',
   'contact.email': 'Email',
-  'contact.phone': 'Phone',
+  'contact.waHref': 'https://wa.me/5561981600111?text=Hi%20Jo%C3%A3o%21%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk.',
   'contact.cv': 'Résumé',
 
   'footer.note': 'Static site, no trackers.',
