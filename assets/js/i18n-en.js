@@ -127,6 +127,7 @@ window.I18N_EN = {
   'exp.title': 'Career',
   'exp.1.when': 'Jan 2026 to present',
   'exp.1.role': 'Co-founder & CTO',
+  'exp.1.desc': 'AI and WhatsApp automation consultancy. I created the AI Customer Service Diagnostic and the multi-agent engine.',
   'exp.2.when': 'Dec 2023 to Dec 2025',
   'exp.2.role': 'Tech Lead, AI and Chatbots',
   'exp.2.org': '· SolviTech, now White Wall',

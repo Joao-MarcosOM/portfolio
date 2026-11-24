@@ -1,5 +1,5 @@
 // URL do LinkedIn: troque só aqui. Todos os links da página (e o JSON-LD) usam esta constante.
-const LINKEDIN_URL = 'https://www.linkedin.com/in/jo%C3%A3o-marcosom/';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/joaomarcosom/';
 
 (() => {
   'use strict';
