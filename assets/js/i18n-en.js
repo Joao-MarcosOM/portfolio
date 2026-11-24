@@ -19,6 +19,7 @@ window.I18N_EN = {
   'hero.lead': 'I help companies turn WhatsApp customer service into an operation that is automated, measured and built to scale.',
   'cta.projects': 'See projects',
   'cta.resume': 'Download résumé',
+  'cv.href': 'assets/docs/resume-joao-marcos.pdf',
 
   'pipe.caption': 'How my diagnostic reads a support conversation (example)',
   'pipe.l1': 'customer message',
@@ -115,7 +116,7 @@ window.I18N_EN = {
   'tools.title': 'Tools',
   'json.alt': 'Converter screen: upload of a flow image and the generated JSON',
   'json.title': 'Image to Blip Builder JSON converter',
-  'json.text': 'Takes an image of a flow and generates JSON compatible with the Blip Builder: the full flow or just the blocks. <span class="preencher">[PREENCHER: modelo de visão usado no back-end e se há demo]</span>',
+  'json.text': 'Takes an image of a flow and generates JSON compatible with the Blip Builder: the full flow or just the blocks. React front end, Node back end. Internal tool, no public version.',
   'json.link': 'GitHub repository',
   'calc.alt': 'Calculator showing message volume, estimated monthly increase and 12-month impact',
   'calc.title': 'WhatsApp cost calculator',
